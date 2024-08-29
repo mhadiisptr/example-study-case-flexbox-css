@@ -1,0 +1,174 @@
+/* reset margin padding */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* Mengatur font di body */
+body{
+  font-family: "Montserrat", sans-serif;
+  /* Jika tumpah/kelebihan ke kanan, sembunyikan */
+  overflow-x: hidden;
+}
+
+/* style navbar */
+nav{
+  display: flex;
+  background-color: rgba(14, 138, 255, 0.967);
+  justify-content: space-around;
+ height: 50px;
+ align-items: center;
+  color: white;
+}
+
+nav .logo{
+  font-family: "Pacifico", cursive;
+  letter-spacing: 3px;
+}
+
+/* style ul  */
+nav ul{
+  display: flex;
+  /*menghilangkantitik-titikpadalist*/list-style: none;
+  width: 40%;
+  /*background-color: black;
+  */justify-content: space-between;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  opacity: 0;
+}
+
+nav ul.slide{
+  transform: translateX(0);
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+}
+
+/* Merubah tulisan list link a */
+nav ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+nav ul li a:hover{
+  color: whitesmoke;
+}
+
+
+/* Hamburger Menu - parent/pembungkus */
+.menu-toggle{
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between ;
+  position: relative;
+  /* background-color: black; */
+}
+.menu-toggle input{
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span{
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  transition: all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+}
+
+/* hamburger animation */
+.menu-toggle span:nth-child(2){
+  transform-origin:  0 0;
+}
+.menu-toggle span:nth-child(4){
+  transform-origin:  0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+  background-color: white;
+  transform: rotate(45deg) translate(-1px, -1px);
+  -webkit-transform: rotate(45deg) translate(-1px, -1px);
+  -moz-transform: rotate(45deg) translate(-1px, -1px);
+  -ms-transform: rotate(45deg) translate(-1px, -1px);
+  -o-transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px, 0);
+  -webkit-transform: rotate(-45deg) translate(-1px, 0);
+  -moz-transform: rotate(-45deg) translate(-1px, 0);
+  -ms-transform: rotate(-45deg) translate(-1px, 0);
+  -o-transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+  opacity: 0;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+}
+
+
+
+
+/* Responsive Mobile breakpoint */
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+ nav ul {
+  width: 50%;
+ } 
+}
+
+/* Ukuran Mobile Menu nya menjadi icon hamburger  */
+@media screen and (max-width: 576px) {
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul{
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 0;
+    width: 80%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    /*background-color: black;
+    */z-index: -1;
+    background-color: rgba(14, 138, 255, 0.967);
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+}
+}
+
